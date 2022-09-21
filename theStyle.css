@@ -1,5 +1,5 @@
 body {
-	background-color: pink;
+	background-color: teal;
 	font-family: 'Molengo', sans-serif;
 
 }
@@ -32,7 +32,7 @@ nav {
 	text-align: center;
 	padding: 2vw;
 	margin: 2vh;
-	background-color: pink;
+	background-color: teal;
 	border-radius: 50px;
 	width: 200px
 }
@@ -41,7 +41,7 @@ nav {
 }
 
 #theSemesters a:hover{
-	color: hotpink;
+	color: midnightblue;
 }
 .thisItem a {
 	font-weight: bold;
@@ -55,7 +55,7 @@ nav {
 	color: white;
 }
 .thisItem a:hover {
-	color: pink;
+	color: teal;
 	font-size: 32px;
 }
 
@@ -68,5 +68,5 @@ nav {
 }
 
 .listItem a:hover{
-	background-color: pink;
+	background-color: teal;
 }
