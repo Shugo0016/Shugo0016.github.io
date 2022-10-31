@@ -299,18 +299,39 @@ p {
 
     color: rgb(38, 48, 51);
     padding: 16px 32px;
+    margin-top: 125px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    /* margin: 4px 2px; */
     transition-duration: 0.4s;
     cursor: pointer;
     background-color: white; 
-    border: 2px solid #4CAF50;
+    border: 2px solid red;
   }
 
   .button:hover {
-    background-color: #4CAF50;
+    background-color:red;
+    color: white;
+  }
+
+  .button1 {
+
+    color: rgb(38, 48, 51);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    border: 2px solid darkgreen;
+    border-radius: 10%;
+  }
+
+  .button1:hover {
+    background-color:darkgreen;
     color: white;
   }
