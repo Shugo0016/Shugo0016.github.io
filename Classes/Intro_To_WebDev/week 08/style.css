@@ -299,12 +299,11 @@ p {
 
     color: rgb(38, 48, 51);
     padding: 16px 32px;
-    margin-top: 125px;
+    margin-top: 150px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    /* margin: 4px 2px; */
     transition-duration: 0.4s;
     cursor: pointer;
     background-color: white; 
