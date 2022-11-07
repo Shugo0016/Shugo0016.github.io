@@ -1,0 +1,14 @@
+body {
+    background-color: teal;
+}
+
+main {
+    background-color: orangered;
+}
+
+h5 {
+    padding: 60px;
+    margin: 50px;
+    background-color: black;
+    color: white;
+}
