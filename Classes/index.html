@@ -1,9 +1,117 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
 <head>
- <title> 🖥 All Classes!!</title>
+    <title>Class Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="theStyle.css">
 </head>
- <body>
-  <!-- <h2>Intro to Web Dev:</h2> -->
-  <a href="Intro_To_WebDev/">Intro to Web Dev</a>
- </body>
+
+<body>
+      <!-- Navbar For Classes page -->
+    <header>
+        <div class = "row">
+            <nav class="navbar fixed-top navbar-dark bg-dark p-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Portfolio</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                        <span class="navbar-text">Learn More</span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Navagation</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About me</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Classes/Projects</a>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="Classes/Intro_To_WebDev/index.html">Intro to WebDev</a></li>
+                                        <li><a class="dropdown-item" href="#">Game Engineering</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Miscellaneous</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class = "py-5 text-center container">
+            <div class = "row py-lg-5">
+                <div class = "col-lg-6 col-md-8 mx-auto">
+                    <h1 class ="fw-light">All Classwork</h1>
+                    <p class = "lead text-muted">
+                        This Page all work from my current and previous classes. 
+                        I hope that this work demonstrates my abilities and growth over the past 4 years.
+                    </p>
+                </div>
+            </div>
+        </section> 
+
+        <div class = "album py-5 bg-light">
+            <div class = "container">
+                <div class = "row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                    <!-- Intro To Web Development Card -->
+                    <div class = "col">
+                        <div class = "card text-white bg-dark mb-3">
+                            <img class="card-img-top" src="../images/VsStudio.png" alt="Card image cap">
+                            <div class = "card-body">
+                                <p class = "card-text">Intro To Web Development: This was my first college intro level HTML/CSS/Javascript course.</p>
+                                <div class = "d-flex justify-content-between align-items-center">
+                                    <div class = "btn-group">
+                                        <a class = "btn btn-sm btn-outline-secondary" href = "Intro_To_WebDev/index.html" role = "button">See Work</a>
+                                    </div>
+                                <small class = "text-muted">Skills Gained: HTML, CSS, Javascript</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game Engineering Card -->
+                    <div class = "col">
+                        <div class = "card text-white bg-dark mb-3">
+                            <img class="card-img-top" src="../images/GameEngineering.png" alt="Card image cap">
+                            <div class = "card-body">
+                                <p class = "card-text">Game Engineering: In this course we learned everything there is to know about Game Engineering in Unity. 
+                                    How to build games on different platforms such IOS, Android, and Mac. </p>
+                                <div class = "d-flex justify-content-between align-items-center">
+                                    <div class = "btn-group">
+                                        <a class = "btn btn-sm btn-outline-secondary" href = "https://shugo16.itch.io/" role = "button">itch.io page</a>
+                                    </div>
+                                    <small class = "text-muted">Skills Gained: Unity, C#, Github</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+
+            </div>
+        </div> 
+    </main>
+
+
+
+    <script src ="../js/bootstrap.bundle.js"></script>
+</body>
+
+
 </html>
