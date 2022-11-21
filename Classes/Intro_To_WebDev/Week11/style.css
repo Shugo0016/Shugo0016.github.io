@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+    text-align: center;
+}
+
+.onTop {
+    font-size: 150px;
+    font-weight: 250;
+    /* text-align: center; */
+    transition: transform .5s;
+    color: white;
+}
+
+.message {
+    font-size: 50px;
+    font-weight: 250;
+    text-align: center;
+    color: white;
+}
+
+img {
+    position: absolute;
+    left: 400px;
+    top: 700px;
+
+}
+
+.button {
+    background-color: white; /* Green */
+    transition-duration: 0.4s;
+    border: 2px solid #e7e7e7;
+    margin-top: 1000px;
+    color: black;
+    padding: 25px 48px;
+    
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: darkgray;
+}
+
+
+
