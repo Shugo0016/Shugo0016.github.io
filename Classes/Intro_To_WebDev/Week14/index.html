@@ -7,27 +7,53 @@
     <title>Sports Tracking</title>
 </head>
 <body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#news">Your Team</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="drop_down()">Sports
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a onclick = "switch_sports('soccer')">Soccer</a>
+              <a onclick="switch_sports('tennis')">Tennis</a>
+              <a onclick = "switch_sports('basketball')">Basketball</a>
+              <a onclick = "switch_sports('hockey')">Hockey</a>
+              <a onclick = "switch_sports('cricket')">Cricket</a>
+            </div>
+            </div> 
+      </div>
+
+      <form id="form" onsubmit="return false;">
+        <input style="position:absolute; top:10%; left:30%; width:10%;" type="text" placeholder="Year: Enter as 2010" id="userInput1" />
+        <input style="position:absolute; top:10%; left:45%; width:10%;" type="text" placeholder="Month: Enter as 06" id="userInput2" />
+        <input style="position:absolute; top:10%; left:60%; width:10%;" type="text" placeholder="Day: Enter as 25" id="userInput3" />
+
+        <input style="position:absolute; top:15% ; left:30%; width:40%;" type="submit" onclick="othername();" />
+    </form>
+
     <div class="container">
-        <h1>ScoreBoard</h1>
-        <div class="title-box">
-            <p>Local Team</p>
+        <!-- <h1>Favorite Team</h1> -->
+        <!-- <div class="title-box">
+            <p id = "favoriteTeam">Favorite Team</p>
             <p id="elapsed">45'</p>
-            <p>Visitor Team</p>
-        </div>
-        <div class="title-box">
-            <div class="team">
+            <p id = "otherTeam">Visitor Team</p>
+        </div>  -->
+        <!-- <div class="title-box"> -->
+            <!-- <div class="team">
                 <img  id="homeLogo" >
                 <p id="homeName">Team name</p>
-            </div>
-            <p id="goals">3  -  1</p>
-            <div class="team">
+            </div> -->
+            <!-- <p id="goals">3  -  1</p> -->
+            <!-- <div class="team">
                 <img id="awayLogo">
                 <p id="awayName">Team name</p>
-            </div>
+            </div> -->
              
-        </div>
+        <!-- </div> -->
         <hr>
         <div id="matchTable" class="matches-table">
+            <h1>SELECT A SPORT</h1>
 
         </div>
     </div>

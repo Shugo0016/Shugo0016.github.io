@@ -1,9 +1,56 @@
+const date = new Date();
+console.log(date);
+var curr_day = date.getDate();
+let curr_month = date.getMonth() + 1;
+let curr_year = date.getFullYear();
+let curr_sport = "hockey";
+matchTable.append("There are 5 sports to choose from... Hockey, Tennis, Basketball, Cricket, Soccer");
+
+curr_day = curr_day.toString();
+curr_month = curr_month.toString();
+curr_year = curr_year.toString();
+
+input_year = curr_year;
+input_month = curr_month;
+input_day = curr_day;
+
+if(curr_day.length < 2) {
+    curr_day = "0" + curr_day;
+}
+if(curr_month.length < 2) {
+    curr_month = "0" + curr_month;
+}
 
 
+
+// Creates drop down effect 
+function drop_down() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+  
+
+  // Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+    }
+    }
+}
+
+
+
+// Adds current playing teams to webpage
 function addMatchTile(date, match){
     //createing the tile div
+
+    matchTable.append("Today's " + curr_sport + " Games:");
+
     var matchtile = document.createElement('div');
+
     matchtile.classList.add("match-tile");
+    
 
     //creating the home match box
     var homeTeam = document.createElement('div');
@@ -11,9 +58,11 @@ function addMatchTile(date, match){
     //creating the image and the text
     var homeTileTeamName = document.createElement('p');
     homeTileTeamName.innerHTML = match.T1[0].Nm;
-    var homeTileTeamLogo = document.createElement('img');
-    // homeTileTeamLogo.src= "";
-    homeTeam.appendChild(homeTileTeamLogo);
+    if (curr_sport != "tennis" && curr_sport != "cricket") {
+        var homeTileTeamLogo = document.createElement('img');
+        homeTileTeamLogo.src= 'https://lsm-static-prod.livescore.com/medium/' + match.T1[0].Img;
+        homeTeam.appendChild(homeTileTeamLogo);
+    }
     homeTeam.appendChild(homeTileTeamName);
 
     var awayTeam = document.createElement('div');
@@ -21,21 +70,32 @@ function addMatchTile(date, match){
     //creating the image and the text
     var awayTileTeamName = document.createElement('p');
     awayTileTeamName.innerHTML = match.T2[0].Nm;
-    var awayTileTeamLogo = document.createElement('img');
-    // awayTileTeamLogo.src=match.T2[0].Img;
-    awayTeam.appendChild(awayTileTeamLogo);
+    if (curr_sport != "tennis" && curr_sport != "cricket") {
+        var awayTileTeamLogo = document.createElement('img');
+        awayTileTeamLogo.src='https://lsm-static-prod.livescore.com/medium/' + match.T2[0].Img;
+        awayTeam.appendChild(awayTileTeamLogo);
+    }
     awayTeam.appendChild(awayTileTeamName);
 
-    //createing the score
+    //createing the date
+    var game_date = document.createElement('p');
+    game_date.innerHTML = date;
+
     var score = document.createElement('p');
-    score.innerHTML = date;
+    score.innerHTML = "5 - 4";
+
 
     //append all the element to the parent
     matchtile.appendChild(homeTeam);
+    matchtile.appendChild(game_date);
     matchtile.appendChild(score);
     matchtile.appendChild(awayTeam);
+    matchtile.addEventListener('click', function handleClick() {
+        console.log("EventClicked");
+    });
 
     matchTable.appendChild(matchtile);
+
 }
 
 const options = {
@@ -46,7 +106,24 @@ const options = {
 	}
 };
 
-fetch('https://livescore6.p.rapidapi.com/matches/v2/list-by-date?Category=hockey&Date=20221207&Timezone=-7', options)
+// Gets user input and stores it in variables
+function othername() {
+    var input_year = document.getElementById("userInput1").value;
+
+    var input_month = document.getElementById("userInput2").value;
+
+    var input_day = document.getElementById("userInput3").value;
+}
+
+// Switches sport based on selected button in the drop down menu
+function switch_sports(sport_name) {
+    curr_sport = sport_name;
+    while (matchTable.firstChild) {
+        matchTable.removeChild(matchTable.firstChild);
+    }
+    // console.log(curr_sport);
+
+    fetch('https://livescore6.p.rapidapi.com/matches/v2/list-by-date?Category=' + curr_sport +'&Date=' + curr_year + curr_month + curr_day + '&Timezone=-7', options)
 	.then(response => {
         return response.json()
     })
@@ -56,7 +133,7 @@ fetch('https://livescore6.p.rapidapi.com/matches/v2/list-by-date?Category=hockey
 
         for (var i = 0; i < todays_games.length; i++) {
 
-            // Breaking weird number representing date into pieces
+            
             var gameTime = todays_games[i].Esd;
             var team1 = todays_games[i].T1[0].Nm;
             var team2 = todays_games[i].T2[0].Nm;
@@ -69,7 +146,8 @@ fetch('https://livescore6.p.rapidapi.com/matches/v2/list-by-date?Category=hockey
             var min = "";
             var gameDay = "";
 
-            // yyyyMMddHHmmss
+
+            // Breaking weird number that represents the date representing date into pieces
             for(var j = 0; j < 12; j++) {
                 if (j >= 0 && j < 4) {
                     year += gameTime[j];
@@ -95,7 +173,7 @@ fetch('https://livescore6.p.rapidapi.com/matches/v2/list-by-date?Category=hockey
             console.log(gameDay);
 
             addMatchTile(gameDay,todays_games[i]);
-
         }
     })
 	.catch(err => console.error(err));
+}
