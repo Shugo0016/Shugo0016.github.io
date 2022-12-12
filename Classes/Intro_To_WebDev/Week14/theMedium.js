@@ -145,6 +145,7 @@ function switch_sports(sport_name) {
     while (matchTable.firstChild) {
         matchTable.removeChild(matchTable.firstChild);
     }
+    matchTable.append("Today's " + curr_sport + " Games:");
 
 // Pareses date into into usable string 
 function get_date(matchTime) {
